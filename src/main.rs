@@ -17,3 +17,21 @@ impl Server {
         println!("Server up on port {}", self.address)
     }
 }
+
+struct Request {
+    path: String,
+    query_string: String,
+    method: Method,
+}
+
+enum Method {
+    GET,
+    DELETE,
+    POST,
+    PUT,
+    HEAD,
+    CONNECT,
+    OPTIONS,
+    TRACE,
+    PATCH,
+}
