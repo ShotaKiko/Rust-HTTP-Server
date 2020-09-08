@@ -20,6 +20,11 @@ impl TryFrom<&[u8]> for Request {
     }
 }
 
+fn get_next(request: &str) -> (&str, &str) {
+    //first in tup is slice we want, 2nd rest of str slice
+    unimplemented!()
+}
+
 pub enum ParseError {
     InvalidRequest,
     InvalidEncoding,
