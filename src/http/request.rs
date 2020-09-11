@@ -20,9 +20,15 @@ impl TryFrom<&[u8]> for Request {
     }
 }
 
-fn get_next(request: &str) -> (&str, &str) {
+fn get_next(request: &str) -> Option<(&str, &str)> {
     //first in tup is slice we want, 2nd rest of str slice
-    unimplemented!()
+    for (i, c) in request.chars().enumerate() {
+        //tuple on each iter (index and value)
+        if c == ' ' {
+            return Some((&request[..i], &request[i + 1..]));
+        }
+    }
+    None
 }
 
 pub enum ParseError {
